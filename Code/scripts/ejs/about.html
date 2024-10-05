@@ -3,13 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | H-Exo-Plorers</title>
     <link rel="stylesheet" href="../css/about.css" type="text/css">
     <link rel="stylesheet" href="../css/chat.css" type="text/css">
-    <title>Not Found | H-Exo-Plorers</title>
 </head>
 <body>
-    <h1>About Us</h1>
-    <p>Something</p>
+    <!-- Header Section -->
+    <header>
+        <h1>About Us</h1>
+    </header>
+
+    <!-- About Content -->
+    <section id="about">
+        <p>We provide cool information about exoplanets and space exploration.</p>
+        
+        <!-- Back to Home Button -->
+        <button onclick="location.href='index.html'">Back to Home</button>
+    </section>
+
+    <!-- Chat button and container -->
+    <div id="chat-button" style="position: fixed; bottom: 20px; right: 20px; background-color: green; color: white; padding: 10px; border-radius: 50px; cursor: pointer;">
+        Chat
+    </div>
+    <div id="chat-container">
+        <div id="chat-prev"></div>
+        <input id="chat-input" type="text" placeholder="Enter prompt...">
+    </div>
+
     <script type="text/javascript" src="../js/chat.js"></script>
 </body>
 </html>

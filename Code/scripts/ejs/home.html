@@ -14,7 +14,6 @@
     <!-- Header Section -->
     <header>
         <!-- Main website title -->
-
         <div class="topnav">
             <img src="../assets/Logo.png" id="logo">
             <a class="active" href="#home">Home</a>
@@ -57,6 +56,9 @@
             <p>We provide cool information</p>
             <!-- Added a button to learn more -->
             <button onclick="location.href='about.html'">Learn More</button>
+
+            <!-- Back to Home Button on About Page -->
+            <button onclick="location.href='index.html'">Back to Home</button>
         </section>
 
         <!-- Services Section -->
@@ -88,7 +90,9 @@
     </footer>
 
     <!-- Chat button and container -->
-    <div id="chat-button">Chat</div>
+    <div id="chat-button" style="position: fixed; bottom: 20px; right: 20px; background-color: green; color: white; padding: 10px; border-radius: 50px; cursor: pointer;">
+        Chat
+    </div>
     <div id="chat-container">
         <div id="chat-prev"></div>
         <input id="chat-input" type="text" placeholder="Enter prompt...">
@@ -98,6 +102,7 @@
 
 </body>
 </html>
+
 
 
 

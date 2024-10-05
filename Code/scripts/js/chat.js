@@ -44,4 +44,4 @@ chatInput.addEventListener("keypress", function(event) {
     }
 });
 
-console.log("Chat system with discussion implemented.");
+console.log("Chat system with discussion implemented.")
