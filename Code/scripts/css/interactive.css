@@ -30,3 +30,11 @@ h1 {
     left: 50vw;
     top: 5vh;
 }
+
+#selector {
+    position: fixed;
+    background-color: white;
+    transform: scale(1.2);
+    left: 2vw;
+    top: calc(10vh + 10px);
+}
