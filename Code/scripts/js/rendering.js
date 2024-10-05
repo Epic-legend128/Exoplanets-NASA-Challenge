@@ -21,13 +21,6 @@ const models = [{
 	z: 5,
 	info: "This is a big exoplanet. This is used for testing for now. Lorem Ipsum.",
 	title: "Proxima_Centauri_b"
-}, {
-	name: "Earth.glb",
-	x: -5,
-	y: 5,
-	z: 5,
-	info: "This is the Earth.",
-	title: "Earth"
 }];
 const displacement = 10;
 const loader = new GLTFLoader();
