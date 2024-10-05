@@ -27,10 +27,10 @@ let objects = [];
 let sizes = {};
 const lights = [{
 	x: 0,
-	y: 10,
-	z: 10,
+	y: 0,
+	z: 0,
 	color: 0xffffff,
-	intensity: 2,
+	intensity: 1.5,
 	distance: 100
 }];
 const pointer = new THREE.Vector2(0, 0);
@@ -72,7 +72,7 @@ let raycaster = new THREE.Raycaster();
 	});
 	
 	//world light
-	const ambientLight = new THREE.AmbientLight(0x404040, 1); // color of light(keep this color), intensity(default=1)
+	const ambientLight = new THREE.AmbientLight(0x404040, 3); // color of light(keep this color), intensity(default=1)
 	scene.add(ambientLight);
 })();
 
@@ -188,7 +188,7 @@ function displayText(name) {
 function loop(time) {
 	objects.forEach(object => {
 		const radians = ( time / 1000 ) % ( 2 * Math.PI );
-		object.children[0].rotation.y = (radians);
+		object.children[0].rotation.y = (radians/10);
 	});
 	raycaster.setFromCamera(pointer, camera);
 	const intersects = raycaster.intersectObjects(scene.children, true);
