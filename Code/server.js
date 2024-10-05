@@ -5,7 +5,7 @@ const app = express();
 const PORT = 3000;
 const allowed = ["interactive", "home", "notFound", "quiz", "about"];
 
-app.set("views", path.join(__dirname, "/scripts"));
+app.set("views", path.join(__dirname, "/scripts/ejs"));
 app.use(express.static(path.join(__dirname, '/scripts')));
 
 app.set("view engine", "ejs");
@@ -17,7 +17,7 @@ app.get("/", async (req, res) => {
 
 app.get("/:id", (req, res) => {
     if (allowed.includes(req.params.id)) res.render(req.params.id + ".ejs");
-    res.render("notFound.ejs");
+    else res.render("notFound.ejs");
 });
 
 app.get("/home", async (req, res) => {
