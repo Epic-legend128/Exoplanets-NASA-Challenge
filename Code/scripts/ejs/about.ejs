@@ -19,8 +19,8 @@
         <!-- Main website title -->
         <div class="topnav">
             <img src="../assets/Logo.png" id="logo">
-            <a class="active" href="#home">Home</a>
-            <a href="about.html">About</a>
+            <a href="/home">Home</a>
+            <a class="active" href="active">About</a>
             <a href="#contact">Contact</a>
             <div></div>
             <input type="text" placeholder=" Search..">
@@ -33,18 +33,13 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <% if (loggedIn) { %>
-                    <li><a href="/logout">Log Out</a></li>
-                <% } else { %>
-                    <li><a href="/login">Log In</a></li>
-                <% } %>
             </ul>
         </nav>
     </header>
 
     <div class="hero-image">
         <div class="hero-text">
-          <h1 class="title">PlanetScope</h1>
+          <h1 class="title">About Us</h1>
           <p class="text">PlanetScope is the ultimate exoplanet viewer. Explore, discover and <br>
             learn about a variety of different exoplanets scattered all  around the <br>cosmos.
             Use our Gemini-powered chatbot assistant to learn more about <br> the technical details and 
@@ -99,17 +94,17 @@
         <p>&copy; 2024 Exoplanets. All rights reserved.</p>
     </footer>
 
-    <% if (loggedIn) { %>
-        <!-- Chat button and container -->
-        <div id="chat-button">Chat</div>
-        <form id="chat-container" action="/chat" method="POST">
-            <div id="chat-prev"> </div>
-            <input id="chat-input" type="text" placeholder="Enter prompt..." name="prompt">
-        </forms>
-        <input type="hidden" id="chats" value='<%= chats %>'>
-        <script src="../js/process.js"> </script>
-    <% } %>
+    <!-- Chat button and container -->
+    <div id="chat-button" style="position: fixed; bottom: 20px; right: 20px; background-color: green; color: white; padding: 10px; border-radius: 50px; cursor: pointer;">
+        Chat
+    </div>
+    <div id="chat-container">
+        <div id="chat-prev"></div>
+        <input id="chat-input" type="text" placeholder="Enter prompt...">
+    </div>
+
     <script type="text/javascript" src="../js/chat.js"></script>
 
 </body>
 </html>
+
