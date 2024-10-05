@@ -1,0 +1,134 @@
+/* login.css */
+
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333; /* Dark background */
+    color: white; /* White text for better contrast */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* H1 styling */
+h1 {
+    font-size: 2.5rem;
+    color: white; /* White text */
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+form#login-form {
+    background-color: #444; /* Darker background for the form */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 300px;
+}
+
+form#login-form input {
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #555; /* Dark background for input fields */
+    color: white;
+    border: 1px solid #666; /* Border color matching the dark theme */
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form#login-form input::placeholder {
+    color: #aaa; /* Light grey for placeholder text */
+}
+
+form#login-form input:focus {
+    border-color: #007BFF; /* Blue border on focus */
+    outline: none;
+}
+
+form#login-form button#submit-login {
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #007BFF; /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form#login-form button#submit-login:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Chat button styling */
+#chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: green;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); /* Darker shadow for contrast */
+    transition: background-color 0.3s ease;
+}
+
+#chat-button:hover {
+    background-color: darkgreen;
+}
+
+/* Chat container styling */
+#chat-container {
+    display: none; /* Hidden by default, shown when chat is active */
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: #444; /* Dark background for chat container */
+    width: 300px;
+    height: 400px;
+    border: 1px solid #666; /* Darker border for chat container */
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#chat-prev {
+    flex-grow: 1;
+    padding: 10px;
+    background-color: #555; /* Slightly lighter background for chat preview */
+    color: white;
+    border-bottom: 1px solid #666;
+    overflow-y: auto;
+}
+
+#chat-input {
+    padding: 10px;
+    background-color: #555; /* Dark background for input field */
+    color: white;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+    border-top: 1px solid #666;
+    box-sizing: border-box;
+}
+
+#chat-input::placeholder {
+    color: #aaa; /* Light grey placeholder */
+}
+
+#chat-input:focus {
+    border-color: #007BFF;
+}
+
