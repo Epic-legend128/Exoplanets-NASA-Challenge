@@ -300,5 +300,7 @@ footer p {
   font-variation-settings:
     "slnt" 0;
     font-size: 16px;
+    text-align: justify;
+    text-justify: inter-word;
     
 }
