@@ -135,6 +135,7 @@ footer p {
   .topnav a.active {
     background-color: #f0eceb;
     color: black;
+    border-radius: 10px;
  
     
   }
@@ -183,7 +184,7 @@ footer p {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/Planet hero image.jpg");
 
   /* Set a specific height */
-  height: 50%;
+  height: 65%;
 
   /* Position and center the image to scale nicely on all screens */
   background-position: center;
@@ -194,10 +195,30 @@ footer p {
 
 /* Place text in the middle of the image */
 .hero-text {
-  text-align: center;
+  text-align: justify;
+  text-justify: inter-word;
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 0%;
+  transform: translate(20%,-40%);
   color: white;
+}
+
+.title {
+    font-family: "Afacad Flux", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+    font-size: 80px;
+}
+
+.text {
+    font-family: "Afacad Flux", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+    font-size: 15px;
+    opacity: 80%;
 }
