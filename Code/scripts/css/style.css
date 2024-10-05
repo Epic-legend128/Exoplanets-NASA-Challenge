@@ -108,7 +108,7 @@ footer p {
     background-color: black;
     padding: 0;
     display: grid;
-    grid-template-columns: 1fr 3fr 3fr 3fr 8fr 3fr;
+    grid-template-columns: 1fr 3fr 3fr 8fr 1.5fr;
     align-items: center;
   }
   
@@ -124,6 +124,7 @@ footer p {
     margin-top: 0px;
     margin-bottom: 0px;
   }
+  
   
   /* Change the color of links on hover */
   .topnav a:hover {
@@ -223,4 +224,9 @@ footer p {
     "slnt" 0;
     font-size: 15px;
     opacity: 80%;
+}
+
+#logInOut {
+    text-align: center;
+    position: absolute
 }
