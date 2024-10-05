@@ -15,15 +15,13 @@
     <header>
         <!-- Main website title -->
 
-       
-
         <div class="topnav">
             <img src="../assets/Logo.png" id="logo">
             <a class="active" href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
             <input type="text" placeholder=" Search..">
-          </div>
+        </div>
 
         <!-- Navigation menu -->
         <nav>
@@ -43,6 +41,7 @@
           <button>Hire me</button>
         </div>
       </div>
+
     <!-- Main Content Section -->
     <main>
 
@@ -56,22 +55,28 @@
         <section id="about">
             <h2>About Us</h2>
             <p>We provide cool information</p>
+            <!-- Added a button to learn more -->
+            <button onclick="location.href='about.html'">Learn More</button>
         </section>
 
         <!-- Services Section -->
         <section id="services">
             <h2>Our Services</h2>
             <ul>
-                <li>Exoplanets</li>
-                <li>Exoplanets</li>
-                <li>Exoplanets</li>
+                <li>Exoplanets <button onclick="location.href='#'">Learn More</button></li>
+                <li>Exoplanets <button onclick="location.href='#'">Learn More</button></li>
+                <li>Exoplanets <button onclick="location.href='#'">Learn More</button></li>
             </ul>
+            <!-- Sign up button -->
+            <button onclick="location.href='#'">Sign Up for Our Services</button>
         </section>
 
         <!-- Contact Section -->
         <section id="contact">
             <h2>Contact Us</h2>
-            <p>Email: helloworld</p>
+            <p>Email: helloworld@example.com</p>
+            <!-- Added a button to send a message -->
+            <button onclick="location.href='mailto:helloworld@example.com'">Send Message</button>
         </section>
 
     </main>
@@ -81,9 +86,19 @@
         <!-- Footer content, including copyright information -->
         <p>&copy; 2024 Exoplanets. All rights reserved.</p>
     </footer>
+
+    <!-- Chat button and container -->
+    <div id="chat-button">Chat</div>
+    <div id="chat-container">
+        <div id="chat-prev"></div>
+        <input id="chat-input" type="text" placeholder="Enter prompt...">
+    </div>
+
     <script type="text/javascript" src="../js/chat.js"></script>
 
 </body>
 </html>
+
+
 
 
