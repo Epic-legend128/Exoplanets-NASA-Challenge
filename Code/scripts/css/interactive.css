@@ -24,9 +24,12 @@ h1 {
     height: 100%;
 }
 
-#info {
+#container {
     position: fixed;
     color: white;
+    background-color: rgba(220, 220, 220, 0.5);
+    padding: 10px;
+    border-radius: 10px;
     left: 50vw;
     top: 5vh;
 }
