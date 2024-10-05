@@ -194,7 +194,7 @@ footer p {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/Planet hero image.jpg");
 
   /* Set a specific height */
-  height: 65%;
+  height: 70%;
 
   /* Position and center the image to scale nicely on all screens */
   background-position: center;
@@ -214,16 +214,17 @@ footer p {
   color: white;
 }
 
-.title {
+.heroTitle {
     font-family: "Afacad Flux", sans-serif;
   font-weight: 900;
   font-style: normal;
   font-variation-settings:
     "slnt" 0;
     font-size: 80px;
+    
 }
 
-.text {
+.heroText {
     font-family: "Afacad Flux", sans-serif;
   font-weight: 500;
   font-style: normal;
@@ -269,5 +270,35 @@ footer p {
   font-variation-settings:
     "slnt" 0;
     font-size: 20px;
+    
+}
+
+#home {
+    font-family: "Afacad Flux", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+}
+
+
+.title {
+    font-family: "Afacad Flux", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+    font-size: 80px;
+    
+}
+
+
+.text {
+    font-family: "Afacad Flux", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+    font-size: 16px;
     
 }
