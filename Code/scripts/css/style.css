@@ -239,7 +239,7 @@ footer p {
     position: absolute
 }
 
-#startBtn {
+.startBtn {
     background-color: white;
     border-radius: 2px;
     border: 0px;
@@ -258,7 +258,7 @@ footer p {
 }
 
 
-#startHereBtn {
+.startHereBtn {
     text-decoration: none;
     color: black;
 }
@@ -297,9 +297,21 @@ footer p {
     text-justify: inter-word;
     margin: 200px;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 50px;
       
 }
+
+#contact {
+  font-family: "Afacad Flux", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+  text-align: justify;
+  text-justify: inter-word;
+  margin: 200px;
+  margin-top: 0;
+  margin-bottom: 0;
 
 .title {
     font-family: "Afacad Flux", sans-serif;
