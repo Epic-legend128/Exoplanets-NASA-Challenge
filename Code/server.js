@@ -139,25 +139,31 @@ app.get("/logout", async (req, res) => {
 app.post("/login", express.urlencoded({ extended: true }), async (req, res) => {
     let name = req.body.name;
     let password = req.body.password;
-    let found = false;
+    let found = 0; // 0=not found, 1=wrong password, 2=login
     let user = new User();
     User.find({}).then(users => {
         for (let i = 0; i<users.length; i++) {
             let user = users[i];
             if (user.name == name) {
-                found = true;
+                if (user.password == password) found = 2;
+                else found = 1
                 break;
             }
         }
     }).then(_ => {
-        req.session.name = name;
-        req.session.password = password;
-        if (!found) {
-            user.name = name;
-            user.password = password;
-            user.save();
+        if (found != 1) {
+            req.session.name = name;
+            req.session.password = password;
+            if (found == 0) {
+                user.name = name;
+                user.password = password;
+                user.save();
+            }
+            res.redirect("home");
         }
-        res.redirect("home");
+        else {
+            res.redirect("login")
+        }
     });
 });
 
