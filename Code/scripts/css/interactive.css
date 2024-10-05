@@ -23,3 +23,10 @@ h1 {
     width: 100%;
     height: 100%;
 }
+
+#info {
+    position: fixed;
+    color: white;
+    left: 50vw;
+    top: 5vh;
+}

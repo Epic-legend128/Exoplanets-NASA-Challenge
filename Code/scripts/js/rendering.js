@@ -19,14 +19,15 @@ const models = [{
 	x: 5,
 	y: 5,
 	z: 5,
-	info: "This is a big exoplanet"
-}, {
+	info: "This is a big exoplanet. This is used for testing for now. Lorem Ipsum.",
+	title: "Big_Miauu"
+}, /* {
 	name: "smallSphere.glb",
 	x: -5,
 	y: -5,
 	z: -5,
 	info: "Lorem Ipsum"
-}];
+} */];
 const displacement = 10;
 const loader = new GLTFLoader();
 let objects = [];
@@ -123,7 +124,9 @@ window.addEventListener("mousemove", function(event) {
 
 window.addEventListener("click", function() {
 	if (INTERSECTED == null) return;
-	let p = INTERSECTED;
+	console.log(INTERSECTED);
+	let p = INTERSECTED.object;
+	let name = INTERSECTED.name;
 	gsap.to(camera.position, {
 		duration: 1,
 		x: p.position.x,
@@ -131,10 +134,21 @@ window.addEventListener("click", function() {
 		z: p.position.z+displacement,
 		onUpdate: function() {
 			camera.lookAt(p.position);
-			console.log(p.children);
+			displayText(name);
 		}
 	});
 });
+
+function displayText(name) {
+	let info = "";
+	Object.keys(models).forEach(x => {
+		if (models[x].title == name) {
+			info = models[x].info;
+		}
+	});
+	let i = document.getElementById("info");
+	i.innerHTML = info;
+}
 
 //render again every frame
 function loop(time) {
@@ -145,8 +159,9 @@ function loop(time) {
 	raycaster.setFromCamera(pointer, camera);
 	const intersects = raycaster.intersectObjects(scene.children, true);
 	if (intersects.length > 0) {
-		if (INTERSECTED != intersects[0].object) {
-			INTERSECTED = intersects[0].object.parent;
+		if (INTERSECTED == null || INTERSECTED.object != intersects[0].object) {
+			//console.log(intersects[0]);
+			INTERSECTED = {name: intersects[0].object.name, object: intersects[0].object.parent};
 		}
 	} else {
 		INTERSECTED = null;
