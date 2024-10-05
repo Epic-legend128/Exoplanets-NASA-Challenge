@@ -131,6 +131,7 @@ let raycaster = new THREE.Raycaster();
 
 //init
 (function() {
+	$("#container").hide();
 	models.forEach(model => {
 		//filling options for searching
 		document.getElementById("selector").innerHTML += "<option value='"+model.title+"'>"+model.title+"</option>";
@@ -143,7 +144,6 @@ let raycaster = new THREE.Raycaster();
 			objects[objects.length-1].position.set(model.x, model.y, model.z);
 			objects[objects.length-1].updateMatrixWorld();
 
-			console.log(objects[objects.length-1].children[0]);
 			scene.add(objects[objects.length-1]);
 
 			
@@ -155,7 +155,6 @@ let raycaster = new THREE.Raycaster();
 		}, function(error) {
 			console.error("There was an error loading "+model+":", error);
 		});
-		console.log(objects);
 	});
 
 	//adding lights
@@ -200,7 +199,6 @@ document.getElementById("selector").addEventListener("change", function(e) {
 	let v = e.target.selectedOptions[0].value;
 	objects.forEach(object => {
 		let o = object.children[0];
-		console.log(o);
 		if (v == o.name) {
 			goTo(object, o.name);
 		}
@@ -236,8 +234,8 @@ window.addEventListener("mousemove", function(event) {
 });
 
 window.addEventListener("click", function() {
-	deleteText();
 	if (INTERSECTED == null) return;
+	deleteText(INTERSECTED.name);
 	let p = INTERSECTED.object;
 	let name = INTERSECTED.name;
 	goTo(p, name);
@@ -248,34 +246,57 @@ function displacement(size) {
 }
 
 function goTo(p, name) {
-	let pos = new THREE.Vector3();
-	pos.add(p.children[0].position);
-	pos.add(p.position);
-	
-	gsap.to(camera.position, {
-		duration: 1,
-		x: pos.x,
-		y: pos.y,
-		z: pos.z+displacement(sizes[name]),
-		onUpdate: function() {
-			camera.lookAt(pos);
-			displayText(name);
-		}
-	});
+	deleteText(name);
+	if ($("info").text() == "") {
+		let pos = new THREE.Vector3();
+		pos.add(p.children[0].position);
+		pos.add(p.position);
+		
+		gsap.to(camera.position, {
+			duration: 1,
+			x: pos.x,
+			y: pos.y,
+			z: pos.z+displacement(sizes[name]),
+			onUpdate: function() {
+				camera.lookAt(pos);
+				displayText(name);
+			}
+		});
+	}
 }
 
-function deleteText() {
-	document.getElementById("info").innerHTML = "";
+function getData(name) {
+	let info = "";
+	let extra = "";
+	Object.keys(models).forEach(x => {
+		if (models[x].title == name) {
+			info = "<li>Name: "+models[x].title+"</li>"+models[x].info;
+			extra = models[x].extra;
+		}
+	});
+	return [info, extra];
+}
+
+function deleteText(name="") {
+	let exit = false;
+	if (name != '') {
+		let d = getData(name);
+		exit = (d[1] == $("#extra").html());
+	}
+	if (!exit) {
+		$("#container").hide();
+		$("#extra").slideUp();
+		document.getElementById("info").innerHTML = "";
+	}
 }
 
 function displayText(name) {
-	let info = "";
-	Object.keys(models).forEach(x => {
-		if (models[x].title == name) {
-			info = models[x].info;
-		}
-	});
+	let d = getData(name);
+	let info = d[0];
+	let extra = d[1];
+	$("#container").show();
 	document.getElementById("info").innerHTML = info;
+	document.getElementById("extra").innerHTML = extra;
 }
 
 //render again every frame
@@ -297,3 +318,7 @@ function loop(time) {
 	window.requestAnimationFrame(loop);
 }
 renderer.setAnimationLoop(loop);
+
+$("#extra-btn").on("click", function() {
+	$("#extra").slideToggle();
+});
