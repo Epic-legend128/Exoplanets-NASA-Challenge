@@ -25,6 +25,12 @@ Super-Earth: Typically terrestrial planets. Much bigger than Earth, but lighter 
 
 The names of the exoplanets depend on the name of their parent star.
 
+Technnical aspects of the planets can be described by using the following:
+Semi-Major Axis: Distance from the centre of an ellipse to the farthest point on the perimeter of the ellipse
+Eccentricity: Measure of how non-circular the orbit of a body is. The value is between 0 and 1 otherwise it will give a parabola and hyperbole as a shape. The eccentricity is derived from conic cones.
+Spectral Type: Shortcode primarily summarizing the ionization state, giving an objective measure of the temperature
+Luminosity: Amount of light reflected from the planet
+
 
 Exoplanets currently featured in the websiter:
 
@@ -59,6 +65,7 @@ Radius: ~1.07 times that of Earth
 Composition: Nitrogen, Oxygen, Carbon Dioxide, Argon, Water
 Mass: Estimated to be around 1.17 Earth masses (6.986×1021 tons)
 Diameter: ~14% of the Sun's diameter
+Orbital Period: 11 days
 
 Proxima Centauri b orbits in the habitable zone of its star, Proxima Centauri, the closest star to the Sun.
 Conditions might allow for liquid water to exist on its surface, although the planet is subject to intense stellar flares and radiation due to its proximity to its star.
@@ -92,6 +99,70 @@ Distance from Star: ~2.2 million km
 Spectral Type: K0
 Star Age: Approximately 8 billion years
 Luminosity: About 40% of the Sun's luminosity
+
+
+HD 189733 b:
+Discovery Date: October 5, 2005
+Distance from Earth: ~64.5 light-years
+Type: Gas Giant
+Radius: 12.7 times that of Earth 
+Composition: hydrogen, helium, methane, water, silicate
+Mass: ~370 Earth masses (~2.21 × 10²⁷ tons)
+Diameter: ~142,000 km (about 11 times Earth's diameter)
+Orbital Period: 2.22 days
+
+HD 189733 b is located extremely close to its star, which leads to scorching temperatures and violent atmospheric conditions.
+It is known for its deep blue color, likely caused by silicate particles that condense in its atmosphere, causing high-speed winds and storms.
+TECHNICAL:
+Semi-Major Axis: ~0.03142 AU
+Eccentricity: ~0.004 (nearly circular orbit)
+Distance from Star: ~4.7 million km
+Spectral Type: K1.5
+Star Age: Approximately 6 billion years
+Luminosity: About 25% of the Sun's luminosity
+
+
+Wasp 12b:
+Discovery Date: April 1, 2008
+Distance from Earth: ~1,410 light-years
+Type: Gas Giant
+Radius: ~21.4 times that of Earth's
+Composition:  hydrogen, helium, carbon, carbon monoxide, methane
+Mass: ~448 Earth masses (~2.68 × 10²⁷ tons)
+Diameter: ~227,000 km (about 18 times Earth's diameter)
+Orbital Period: 1.09 days
+
+WASP-12b is one of the most extreme exoplanets that we know of, orbiting extremely close to its host star, which causes it to experience immense tidal forces. These forces are so strong that the planet is being deformed and is losing material to its star, giving it an elongated, football-like shape.
+It is also one of the darkest exoplanets discovered, reflecting very little light from its star.
+
+TECHNICAL:
+Semi-Major Axis: ~0.0234 AU
+Eccentricity: ~0.049 (slightly eccentric orbit)
+Distance from Star: ~3.5 million km
+Spectral Type: G0
+Star Age: Approximately 3 billion years
+Luminosity: ~1.4% that of the Sun
+
+
+Kepler-186f:
+Discovery Date: April 17, 2014
+Distance from Earth: ~580 light-years
+Type: Terrestrial
+Radius: 1.11 times that of Earth
+Composition: Silicates, metals (composition similar to Earth)
+Mass: 1.32 Earth masses (~7.88 × 10²⁴ tons)
+Diameter: ~12% larger than Earth (~14,300 km)
+Orbital Period: 129.9 days
+
+While little is known about its atmosphere, its location in the habitable zone makes it a candidate for potentially supporting life.
+TECHNICAL:
+Semi-Major Axis: ~0.356 AU
+Eccentricity: Uknown
+Distance from Star: ~53.6 million km
+Spectral Type: M1 (Red Dwarf)
+Star Age: Approximately 4 billion years
+Luminosity: About 4% of the Sun’s luminosity
+
 
 
 
