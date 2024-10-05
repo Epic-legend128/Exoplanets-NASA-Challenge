@@ -18,12 +18,14 @@ const models = [{
 	name: "bigSphere.glb",
 	x: 5,
 	y: 5,
-	z: 5
+	z: 5,
+	info: "This is a big exoplanet"
 }, {
 	name: "smallSphere.glb",
 	x: -5,
 	y: -5,
-	z: -5
+	z: -5,
+	info: "Lorem Ipsum"
 }];
 const displacement = 10;
 const loader = new GLTFLoader();
@@ -47,10 +49,11 @@ let raycaster = new THREE.Raycaster();
 	models.forEach(model => {
 		loader.load("/assets/"+model.name, function(glb) {
 			console.log("Loaded "+model);
-			objects.push(glb.scene);
 			
+			objects.push(glb.scene);
 			objects[objects.length-1].position.set(model.x, model.y, model.z);
 			objects[objects.length-1].updateMatrixWorld();
+
 			scene.add(objects[objects.length-1]);
 		}, function(xhr) {
 			console.log((xhr.loaded/xhr.total*100)+"% loaded of "+model);
@@ -128,6 +131,7 @@ window.addEventListener("click", function() {
 		z: p.position.z+displacement,
 		onUpdate: function() {
 			camera.lookAt(p.position);
+			console.log(p.children);
 		}
 	});
 });
