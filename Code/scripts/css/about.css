@@ -129,6 +129,8 @@ footer p {
   .topnav a:hover {
     background-color: #ddd;
     color: #131312;
+    border-radius: 10px;
+    opacity: 70%;
   }
   
   /* Style the "active" element to highlight the current page */
