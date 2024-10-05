@@ -206,7 +206,7 @@ footer p {
   color: white;
 }
 
-.title {
+.heroTitle {
     font-family: "Afacad Flux", sans-serif;
   font-weight: 900;
   font-style: normal;
@@ -215,7 +215,7 @@ footer p {
     font-size: 80px;
 }
 
-.text {
+.heroText {
     font-family: "Afacad Flux", sans-serif;
   font-weight: 500;
   font-style: normal;
@@ -225,3 +225,40 @@ footer p {
     opacity: 80%;
 }
 
+#home {
+  font-family: "Afacad Flux", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+  text-align: justify;
+  text-justify: inter-word;
+  margin: 200px;
+  margin-top: 0;
+  margin-bottom: 0;
+    
+}
+
+
+.title {
+  font-family: "Afacad Flux", sans-serif;
+font-weight: 900;
+font-style: normal;
+font-variation-settings:
+  "slnt" 0;
+  font-size: 80px;
+  
+}
+
+
+.text {
+  font-family: "Afacad Flux", sans-serif;
+font-weight: 500;
+font-style: normal;
+font-variation-settings:
+  "slnt" 0;
+  font-size: 16px;
+  text-align: justify;
+  text-justify: inter-word;
+  
+}
