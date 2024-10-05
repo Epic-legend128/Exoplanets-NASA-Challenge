@@ -1,7 +1,6 @@
 require("./models/db")
 const express = require("express");
 const path = require("path");
-const bodyparser = require("body-parser");
 const mongoose = require("mongoose");
 const cookieSession = require("cookie-session");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
@@ -114,7 +113,7 @@ app.get("/", async (req, res) => {
     res.redirect("/home");
 });
 
-app.get("/:id", bodyparser.urlencoded({ extended: true }), async (req, res) => {
+app.get("/:id", express.urlencoded({ extended: true }), async (req, res) => {
     if (allowed.includes(req.params.id)) res.render(req.params.id + ".ejs", {
         loggedIn: isLoggedIn(req),
         chats: (isLoggedIn(req) ? JSON.stringify(previousChats[req.session.name]) : "")
@@ -137,7 +136,7 @@ app.get("/logout", async (req, res) => {
     res.redirect("home");
 });
 
-app.post("/login", bodyparser.urlencoded({ extended: true }), async (req, res) => {
+app.post("/login", express.urlencoded({ extended: true }), async (req, res) => {
     let name = req.body.name;
     let password = req.body.password;
     let found = false;
@@ -162,7 +161,7 @@ app.post("/login", bodyparser.urlencoded({ extended: true }), async (req, res) =
     });
 });
 
-app.post("/chat", bodyparser.urlencoded({ extended: true }), async (req, res) => {
+app.post("/chat", express.urlencoded({ extended: true }), async (req, res) => {
     try {
         let user = req.session['name'];
         let prompt = req.body.prompt;
