@@ -19,7 +19,7 @@
         <!-- Main website title -->
         <div class="topnav">
             <img src="../assets/Logo.png" id="logo">
-            <a href="home.html">Home</a>
+            <a href="/home">Home</a>
             <a class="active" href="active">About</a>
             <a href="#contact">Contact</a>
             <div></div>
@@ -103,8 +103,17 @@
         <input id="chat-input" type="text" placeholder="Enter prompt...">
     </div>
 
-    <script type="text/javascript" src="../js/chat.js"></script>
-
+    <% if (loggedIn) { %>
+        <!-- Chat button and container -->
+        <div id="chat-button">Chat</div>
+        <form id="chat-container" action="/chat" method="POST">
+            <div id="chat-prev"> </div>
+            <input id="chat-input" type="text" placeholder="Enter prompt..." name="prompt">
+        </forms>
+        <input type="hidden" id="chats" value='<%= chats %>'>
+        <script src="../js/process.js"> </script>
+        <script type="text/javascript" src="../js/chat.js"></script>
+    <% } %>
 </body>
 </html>
 
