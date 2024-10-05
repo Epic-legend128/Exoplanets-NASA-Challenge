@@ -20,6 +20,16 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script type="module" src="../js/rendering.js"></script>
-    <script type="text/javascript" src="../js/chat.js"></script>
+    <% if (loggedIn) { %>
+        <!-- Chat button and container -->
+        <div id="chat-button">Chat</div>
+        <form id="chat-container" action="/chat" method="POST">
+            <div id="chat-prev"> </div>
+            <input id="chat-input" type="text" placeholder="Enter prompt..." name="prompt">
+        </forms>
+        <input type="hidden" id="chats" value='<%= chats %>'>
+        <script src="../js/process.js"> </script>
+        <script type="text/javascript" src="../js/chat.js"></script>
+    <% } %>
 </body>
 </html>

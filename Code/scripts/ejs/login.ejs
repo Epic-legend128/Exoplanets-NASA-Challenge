@@ -14,6 +14,16 @@
         <input name="password" type="password" placeholder="Password...">
         <button id="submit-login">Login</button>
     </form>
-    <script type="text/javascript" src="../js/chat.js"></script>
+    <% if (loggedIn) { %>
+        <!-- Chat button and container -->
+        <div id="chat-button">Chat</div>
+        <form id="chat-container" action="/chat" method="POST">
+            <div id="chat-prev"> </div>
+            <input id="chat-input" type="text" placeholder="Enter prompt..." name="prompt">
+        </forms>
+        <input type="hidden" id="chats" value='<%= chats %>'>
+        <script src="../js/process.js"> </script>
+        <script type="text/javascript" src="../js/chat.js"></script>
+    <% } %>
 </body>
 </html>
