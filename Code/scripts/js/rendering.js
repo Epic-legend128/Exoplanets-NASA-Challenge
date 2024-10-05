@@ -21,13 +21,7 @@ const models = [{
 	z: 5,
 	info: "This is a big exoplanet. This is used for testing for now. Lorem Ipsum.",
 	title: "Big_Miauu"
-}, /* {
-	name: "smallSphere.glb",
-	x: -5,
-	y: -5,
-	z: -5,
-	info: "Lorem Ipsum"
-} */];
+}];
 const displacement = 10;
 const loader = new GLTFLoader();
 let objects = [];
@@ -96,6 +90,11 @@ controls.enableZoom = true;
 controls.autoRotation = true;
 controls.update();
 
+//when camera is transformed
+controls.addEventListener("change", _ => {
+	deleteText();
+});
+
 //adjust canvas size if screen changes
 window.addEventListener("resize", () => {
 	width = window.innerWidth;
@@ -108,9 +107,11 @@ window.addEventListener("resize", () => {
 //arrow controls
 window.addEventListener("keyup", function(key) {
 	if (key.key == "ArrowUp" || key.key.toLowerCase() == "w") {
+		deleteText();
 		camera.position.add(camera.getWorldDirection().multiplyScalar(SPEED));
 	}
 	else if (key.key == "ArrowDown" || key.key.toLowerCase() == "s") {
+		deleteText();
 		camera.position.add(camera.getWorldDirection().multiplyScalar(-SPEED));
 	}
 });
@@ -123,8 +124,8 @@ window.addEventListener("mousemove", function(event) {
 });
 
 window.addEventListener("click", function() {
+	deleteText();
 	if (INTERSECTED == null) return;
-	console.log(INTERSECTED);
 	let p = INTERSECTED.object;
 	let name = INTERSECTED.name;
 	gsap.to(camera.position, {
@@ -139,6 +140,10 @@ window.addEventListener("click", function() {
 	});
 });
 
+function deleteText() {
+	document.getElementById("info").innerHTML = "";
+}
+
 function displayText(name) {
 	let info = "";
 	Object.keys(models).forEach(x => {
@@ -146,15 +151,15 @@ function displayText(name) {
 			info = models[x].info;
 		}
 	});
-	let i = document.getElementById("info");
-	i.innerHTML = info;
+	document.getElementById("info").innerHTML = info;
 }
 
 //render again every frame
 function loop(time) {
 	objects.forEach(object => {
 		const radians = ( time / 1000 ) % ( 2 * Math.PI );
-		object.rotation.y = (radians);
+		// uncomment later
+		//object.rotation.y = (radians);
 	});
 	raycaster.setFromCamera(pointer, camera);
 	const intersects = raycaster.intersectObjects(scene.children, true);
@@ -170,33 +175,3 @@ function loop(time) {
 	window.requestAnimationFrame(loop);
 }
 renderer.setAnimationLoop(loop);
-
-
-
-//spheres
-/* const geometry = new THREE.SphereGeometry(3, 64, 64);
-const geometry2 = new THREE.SphereGeometry(4, 64, 64);
-const geometry3 = new THREE.SphereGeometry(2, 64, 64);
-const material = new THREE.MeshStandardMaterial({
-	color: "#00ff83",
-	roughness: 0.5
-});
-const material2 = new THREE.MeshStandardMaterial({
-	color: "#5046ff",
-	roughness: 0.6
-});
-const material3 = new THREE.MeshStandardMaterial({
-	color: "#ff4687",
-	roughness: 0.6
-});
-const mesh = new THREE.Mesh(geometry, material);
-const mesh2 = new THREE.Mesh(geometry2, material2);
-const mesh3 = new THREE.Mesh(geometry3, material3);
-mesh2.position.set(-8, 0, 0);
-mesh3.position.set(8, 0, 0);
-scene.add(mesh);
-scene.add(mesh2);
-scene.add(mesh3);
-*/
-
-//scene.add(new THREE.AxesHelper(5));
