@@ -17,14 +17,20 @@ body {
 header {
     background-color: black; /* Dark background for header */
     color: #fff; /* White text color */
-    padding-top: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
     text-align: center; /* Center the header content */
 }
 
 #logo {
+    padding-bottom: 0px;
     width: 80px;
     height: 70px;
+
+    align-items: center;
+    margin-top: 5px;
 }
+
 
 /* Styling the main title inside the header */
 header h1 {
@@ -36,7 +42,7 @@ nav ul {
     list-style: none; /* Remove bullets from list */
     display: flex; /* Display items in a row */
     justify-content: center; /* Center the navigation menu */
-    background-color: red;
+    background-color: #2b2a24;
 }
 
 /* Navigation list item styles */
@@ -99,24 +105,26 @@ footer p {
 /* Add a black background color to the top navigation bar */
 .topnav {
     overflow: hidden;
-    background-color: #e9e9e9;
+    background-color: black;
   }
   
   /* Style the links inside the navigation bar */
   .topnav a {
     float: left;
     display: block;
-    color: black;
-    text-align: center;
+    color: #fdf9fd;
+    text-align: top;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    margin-top: 5px;
+    margin-bottom: 0px;
   }
   
   /* Change the color of links on hover */
   .topnav a:hover {
     background-color: #ddd;
-    color: black;
+    color: #131312;
   }
   
   /* Style the "active" element to highlight the current page */
@@ -128,11 +136,17 @@ footer p {
   /* Style the search box inside the navigation bar */
   .topnav input[type=text] {
     float: right;
-    padding: 8px;
+    padding: 0px;
     border: none;
-    margin-top: 9px;
+    margin-top: 25px;
     margin-right: 16px;
     font-size: 17px;
+    border-radius: 5px;
+    height: 30px;
+    width: 300px;
+
+
+
   }
   
   /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
@@ -149,3 +163,35 @@ footer p {
       border: 1px solid #ccc;
     }
   }
+
+
+
+
+  body, html {
+    height: 100%;
+}
+
+/* The hero image */
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/Planet hero image.jpg");
+
+  /* Set a specific height */
+  height: 50%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
