@@ -108,7 +108,7 @@ footer p {
     background-color: black;
     padding: 0;
     display: grid;
-    grid-template-columns: 1fr 3fr 3fr 8fr 1.5fr;
+    grid-template-columns: 1fr 2fr 2fr 9.5fr 1.5fr ;
     align-items: center;
   }
   
@@ -123,6 +123,13 @@ footer p {
     font-size: 17px;
     margin-top: 0px;
     margin-bottom: 0px;
+
+    font-family: "Afacad Flux", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+    font-size: 20px;
   }
   
   
@@ -229,4 +236,38 @@ footer p {
 #logInOut {
     text-align: center;
     position: absolute
+}
+
+#startBtn {
+    background-color: white;
+    border-radius: 2px;
+    border: 0px;
+    transform: translate(0,20px);
+    height: 45px;
+    width: 150px;
+
+    font-family: "Afacad Flux", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+    font-size: 20px;
+    
+
+}
+
+
+#startHereBtn {
+    text-decoration: none;
+    color: black;
+}
+
+.navBottom {
+    font-family: "Afacad Flux", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+    font-size: 20px;
+    
 }
