@@ -206,7 +206,7 @@ let raycaster = new THREE.Raycaster();
 		}, function(xhr) {
 			//console.log((xhr.loaded/xhr.total*100)+"% loaded of "+model);
 		}, function(error) {
-			console.error("There was an error loading "+model+":", error);
+			console.error("There was an error loading ", model.children[0].name, ": ", error);
 		});
 	});
 
