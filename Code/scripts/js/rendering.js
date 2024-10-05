@@ -15,12 +15,19 @@ let INTERSECTED;
 const SPEED = 3;
 const scene = new THREE.Scene();
 const models = [{
-	name: "bigSphere.glb",
+	name: "Proxima_Centauri_b.glb",
 	x: 5,
 	y: 5,
 	z: 5,
 	info: "This is a big exoplanet. This is used for testing for now. Lorem Ipsum.",
-	title: "Big_Miauu"
+	title: "Proxima_Centauri_b"
+}, {
+	name: "Earth.glb",
+	x: -5,
+	y: 5,
+	z: 5,
+	info: "This is the Earth.",
+	title: "Earth"
 }];
 const displacement = 10;
 const loader = new GLTFLoader();
@@ -99,7 +106,6 @@ controls.addEventListener("change", _ => {
 
 //searching for planets
 document.getElementById("selector").addEventListener("change", function(e) {
-	console.log("Started");
 	let v = e.target.selectedOptions[0].value;
 	objects.forEach(object => {
 		let o = object.children[0];
@@ -147,13 +153,20 @@ window.addEventListener("click", function() {
 });
 
 function goTo(p, name) {
+	let pos = new THREE.Vector3();
+	pos.add(p.children[0].position);
+	pos.add(p.position);
+	console.log("Start")
+	console.log(p.children[0].position);
+	console.log(p.position);
+	console.log(pos);
 	gsap.to(camera.position, {
 		duration: 1,
-		x: p.position.x,
-		y: p.position.y,
-		z: p.position.z+displacement,
+		x: pos.x,
+		y: pos.y,
+		z: pos.z+displacement,
 		onUpdate: function() {
-			camera.lookAt(p.position);
+			camera.lookAt(pos);
 			displayText(name);
 		}
 	});
@@ -179,7 +192,7 @@ function loop(time) {
 	objects.forEach(object => {
 		const radians = ( time / 1000 ) % ( 2 * Math.PI );
 		// uncomment later
-		//object.rotation.y = (radians);
+		object.children[0].rotation.y = (radians);
 	});
 	raycaster.setFromCamera(pointer, camera);
 	const intersects = raycaster.intersectObjects(scene.children, true);
