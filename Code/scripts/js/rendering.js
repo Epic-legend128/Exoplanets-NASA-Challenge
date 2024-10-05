@@ -40,8 +40,11 @@ let raycaster = new THREE.Raycaster();
 
 //init
 (function() {
-	//loading GLB models
 	models.forEach(model => {
+		//filling options for searching
+		document.getElementById("selector").innerHTML += "<option value='"+model.title+"'>"+model.title+"</option>";
+
+		//loading GLB models
 		loader.load("/assets/"+model.name, function(glb) {
 			console.log("Loaded "+model);
 			
@@ -69,7 +72,6 @@ let raycaster = new THREE.Raycaster();
 	scene.add(ambientLight);
 })();
 
-
 //camera
 const camera = new THREE.PerspectiveCamera(45, width / height);
 camera.position.z = 20;
@@ -93,6 +95,19 @@ controls.update();
 //when camera is transformed
 controls.addEventListener("change", _ => {
 	deleteText();
+});
+
+//searching for planets
+document.getElementById("selector").addEventListener("change", function(e) {
+	console.log("Started");
+	let v = e.target.selectedOptions[0].value;
+	objects.forEach(object => {
+		let o = object.children[0];
+		console.log(o);
+		if (v == o.name) {
+			goTo(object, o.name);
+		}
+	});
 });
 
 //adjust canvas size if screen changes
@@ -128,6 +143,10 @@ window.addEventListener("click", function() {
 	if (INTERSECTED == null) return;
 	let p = INTERSECTED.object;
 	let name = INTERSECTED.name;
+	goTo(p, name);
+});
+
+function goTo(p, name) {
 	gsap.to(camera.position, {
 		duration: 1,
 		x: p.position.x,
@@ -138,13 +157,14 @@ window.addEventListener("click", function() {
 			displayText(name);
 		}
 	});
-});
+}
 
 function deleteText() {
 	document.getElementById("info").innerHTML = "";
 }
 
 function displayText(name) {
+	console.log("Inside with "+name);
 	let info = "";
 	Object.keys(models).forEach(x => {
 		if (models[x].title == name) {
