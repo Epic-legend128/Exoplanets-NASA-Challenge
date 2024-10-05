@@ -22,9 +22,9 @@ const models = [{
 	info: "This is a big exoplanet. This is used for testing for now. Lorem Ipsum.",
 	title: "Proxima_Centauri_b"
 }];
-const displacement = 10;
 const loader = new GLTFLoader();
 let objects = [];
+let sizes = {};
 const lights = [{
 	x: 0,
 	y: 10,
@@ -51,8 +51,12 @@ let raycaster = new THREE.Raycaster();
 			objects.push(glb.scene);
 			objects[objects.length-1].position.set(model.x, model.y, model.z);
 			objects[objects.length-1].updateMatrixWorld();
-
+			
 			scene.add(objects[objects.length-1]);
+			
+			let box = new THREE.Box3().setFromObject(glb.scene);
+			let s = box.getSize(new THREE.Vector3());
+			sizes[objects[objects.length-1].children[0].name] = (s.x+s.y+s.z)/3;
 		}, function(xhr) {
 			console.log((xhr.loaded/xhr.total*100)+"% loaded of "+model);
 		}, function(error) {
@@ -145,19 +149,20 @@ window.addEventListener("click", function() {
 	goTo(p, name);
 });
 
+function displacement(size) {
+	return 3+size;
+}
+
 function goTo(p, name) {
 	let pos = new THREE.Vector3();
 	pos.add(p.children[0].position);
 	pos.add(p.position);
-	console.log("Start")
-	console.log(p.children[0].position);
-	console.log(p.position);
-	console.log(pos);
+	
 	gsap.to(camera.position, {
 		duration: 1,
 		x: pos.x,
 		y: pos.y,
-		z: pos.z+displacement,
+		z: pos.z+displacement(sizes[name]),
 		onUpdate: function() {
 			camera.lookAt(pos);
 			displayText(name);
@@ -170,7 +175,6 @@ function deleteText() {
 }
 
 function displayText(name) {
-	console.log("Inside with "+name);
 	let info = "";
 	Object.keys(models).forEach(x => {
 		if (models[x].title == name) {
@@ -184,14 +188,12 @@ function displayText(name) {
 function loop(time) {
 	objects.forEach(object => {
 		const radians = ( time / 1000 ) % ( 2 * Math.PI );
-		// uncomment later
 		object.children[0].rotation.y = (radians);
 	});
 	raycaster.setFromCamera(pointer, camera);
 	const intersects = raycaster.intersectObjects(scene.children, true);
 	if (intersects.length > 0) {
 		if (INTERSECTED == null || INTERSECTED.object != intersects[0].object) {
-			//console.log(intersects[0]);
 			INTERSECTED = {name: intersects[0].object.name, object: intersects[0].object.parent};
 		}
 	} else {
