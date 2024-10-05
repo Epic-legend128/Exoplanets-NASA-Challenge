@@ -19,9 +19,100 @@ const models = [{
 	x: 5,
 	y: 5,
 	z: 5,
-	info: "This is a big exoplanet. This is used for testing for now. Lorem Ipsum.",
+	info: `<li>Discovery Date: August 24, 2016</li>
+<li>Distance from Earth: ~4.24 light years</li>
+<li>Type: Terrestrial </li>
+<li>Radius: ~1.07 times that of Earth</li>
+<li>Composition: Nitrogen, Oxygen, Carbon Dioxide, Argon, Water</li>
+<li>Mass: Estimated to be around 1.17 Earth masses (6.986×1021 tons)</li>
+<li>Diameter: ~14% of the Sun's diameter</li>
+<li>Proxima Centauri b orbits in the habitable zone of its star, Proxima Centauri, the closest star to the Sun.</li>
+<li>Conditions might allow for liquid water to exist on its surface, although the planet is subject to intense stellar flares and radiation due to its proximity to its star.</li>
+`,
+	extra: `
+<li>Semi-Major Axis: Approximately 0.0485 AU</li>
+<li>Eccentricity: 0.0</li>
+<li>Distance from Star: ~7.5 million km</li>
+<li>Spectral Type: M5.5 (Red Dwarf)</li>
+<li>Star Age: Approximately 4.85 billion years</li>
+<li>Luminosity: 0.15% of the Sun's luminosity</li>
+
+`,
 	title: "Proxima_Centauri_b"
-}];
+}, {
+	name: "55_Cancri_e.glb",
+	x: -30,
+	y: -30,
+	z: -30,
+	info: `<li>Discovery Date: August 30, 2004</li>
+<li>Distance from Earth: ~41 light-years</li>
+<li>Type: Super-Earth</li>
+<li>Radius: 1.875 times that of Earth</li>
+<li>Composition: Carbon, Silicon, Hydrogen, Diamond, Graphite, Hydrogen</li>
+<li>Mass: Estimated at about 8.08 Earth masses (4.82×10²⁴ tons)</li>
+<li>Diameter: 80% larger than Earth</li>
+<li>Orbital Period: 0.736 days (17.6 hours)</li>
+
+<li>55 Cancri e is located extremely close to its star, with temperatures on the surface exceeding 2,000°C.</li>
+<li>There is speculation about volcanic activity or even liquid lava oceans. </li>
+`,
+	extra: `<li>Semi-Major Axis: Approximately 0.0156 AU</li>
+<li>Eccentricity: ~0.03 (mildly eccentric orbit)</li>
+<li>Distance from Star: ~2.2 million km</li>
+<li>Spectral Type: K0</li>
+<li>Star Age: Approximately 8 billion years</li>
+<li>Luminosity: About 40% of the Sun's luminosity</li>
+
+`,
+	title: "55_Cancri_e"
+}/* , {
+	name: "HD_189733_b.glb",
+	x: 15,
+	y: 0,
+	z: 15,
+	info: "This is a big exoplanet. This is used for testing for now. Lorem Ipsum.",
+	title: "HD_189733_b"
+}, {
+	name: "Kepler_186_f.glb",
+	x: -10,
+	y: -10,
+	z: -10,
+	info: "This is a big exoplanet. This is used for testing for now. Lorem Ipsum.",
+	title: "Kepler_186_f"
+}, {
+	name: "Kepler_452_b.glb",
+	x: -5,
+	y: -5,
+	z: -5,
+	info: `<li>Discovery Date: July 23, 2015</li>
+<li>Distance from Earth: ~1,400 light-years</li>
+<li>Type: Super-Earth</li>
+<li>Radius: 1.63 times that of Earth</li>
+<li>Composition: 82% nitrogen, 14% Oxygen, 2% Carbon Dioxide, 2% trace element</li>
+<li>Mass: Estimated at about 3.29 Earth masses (1.964×1022 tons)</li>
+<li>Diameter: 60% larger than Earth</li>
+<li>Orbital Period: 384.8 days (~5% longer than Earth's year)</li>
+<li>Kepler-452b is located in the habitable zone of its star, conditions allow for liquid water to exist on its surface.</li>
+<li>Composition similar to Neptune, with a small rocky core surrounded by a thick mantle of ice and gasses.</li>
+<li>Kepler-452b was notable for being the first approximately Earth-sized planet found in the habitable zone of a Sun-like star.</li>
+The<li> data leading to the discovery of Kepler-452b was collected through the Kepler Space Telescope.</li>`,
+	extra: `
+		<li>Semi-Major Axis: Approximately 1.046 AU</li>
+		<li>Eccentricity: 0.0</li>
+		<li>Distance from Star: 156.5 million km</li>
+		<li>Spectral Type: G2</li>
+		<li>Star Age: Approximately 6 billion years</li>
+		<li>Luminosity: 20% brighter than the Sun</li>
+`
+	title: "Kepler_452_b"
+}, {
+	name: "Wasp_12_b.glb",
+	x: 15,
+	y: 0,
+	z: -15,
+	info: "This is a big exoplanet. This is used for testing for now. Lorem Ipsum.",
+	title: "Wasp_12_b"
+} */];
 const loader = new GLTFLoader();
 let objects = [];
 let sizes = {};
@@ -51,8 +142,10 @@ let raycaster = new THREE.Raycaster();
 			objects.push(glb.scene);
 			objects[objects.length-1].position.set(model.x, model.y, model.z);
 			objects[objects.length-1].updateMatrixWorld();
-			
+
+			console.log(objects[objects.length-1].children[0]);
 			scene.add(objects[objects.length-1]);
+
 			
 			let box = new THREE.Box3().setFromObject(glb.scene);
 			let s = box.getSize(new THREE.Vector3());
@@ -62,6 +155,7 @@ let raycaster = new THREE.Raycaster();
 		}, function(error) {
 			console.error("There was an error loading "+model+":", error);
 		});
+		console.log(objects);
 	});
 
 	//adding lights
@@ -188,7 +282,7 @@ function displayText(name) {
 function loop(time) {
 	objects.forEach(object => {
 		const radians = ( time / 1000 ) % ( 2 * Math.PI );
-		object.children[0].rotation.y = (radians/10);
+		//object.children[0].rotation.y = (radians/10);
 	});
 	raycaster.setFromCamera(pointer, camera);
 	const intersects = raycaster.intersectObjects(scene.children, true);
