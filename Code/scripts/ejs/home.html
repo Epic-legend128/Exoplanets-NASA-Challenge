@@ -33,6 +33,11 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <% if (loggedIn) { %>
+                    <li><a href="/logout">Log Out</a></li>
+                <% } else { %>
+                    <li><a href="/login">Log In</a></li>
+                <% } %>
             </ul>
         </nav>
     </header>
@@ -94,21 +99,17 @@
         <p>&copy; 2024 Exoplanets. All rights reserved.</p>
     </footer>
 
-    <!-- Chat button and container -->
-    <div id="chat-button" style="position: fixed; bottom: 20px; right: 20px; background-color: green; color: white; padding: 10px; border-radius: 50px; cursor: pointer;">
-        Chat
-    </div>
-    <div id="chat-container">
-        <div id="chat-prev"></div>
-        <input id="chat-input" type="text" placeholder="Enter prompt...">
-    </div>
-
+    <% if (loggedIn) { %>
+        <!-- Chat button and container -->
+        <div id="chat-button">Chat</div>
+        <form id="chat-container" action="/chat" method="POST">
+            <div id="chat-prev"> </div>
+            <input id="chat-input" type="text" placeholder="Enter prompt..." name="prompt">
+        </forms>
+        <input type="hidden" id="chats" value='<%= chats %>'>
+        <script src="../js/process.js"> </script>
+    <% } %>
     <script type="text/javascript" src="../js/chat.js"></script>
 
 </body>
 </html>
-
-
-
-
-
