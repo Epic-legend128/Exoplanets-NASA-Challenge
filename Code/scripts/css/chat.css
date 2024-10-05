@@ -1,0 +1,9 @@
+#chat-button {
+    position: fixed;
+    visibility: show;
+}
+
+#chat-container {
+    position: fixed;
+    visibility: show;
+}
