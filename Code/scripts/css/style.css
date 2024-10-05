@@ -9,7 +9,7 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4; /* Light gray background */
+    background-color: #f0eceb; /* Light gray background */
     color: #333; /* Dark gray text color */
 }
 
@@ -129,8 +129,9 @@ footer p {
   
   /* Style the "active" element to highlight the current page */
   .topnav a.active {
-    background-color: #2196F3;
-    color: white;
+    background-color: #f0eceb;
+    color: black;
+    
   }
   
   /* Style the search box inside the navigation bar */
