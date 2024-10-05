@@ -65,19 +65,53 @@ const models = [{
 
 `,
 	title: "55_Cancri_e"
-}/* , {
+}, {
 	name: "HD_189733_b.glb",
 	x: 15,
 	y: 0,
 	z: 15,
-	info: "This is a big exoplanet. This is used for testing for now. Lorem Ipsum.",
+	info: `<li>Discovery Date: October 5, 2005</li>
+<li>Distance from Earth: ~64.5 light-years</li>
+<li>Type: Gas Giant</li>
+<li>Radius: 12.7 times that of Earth </li>
+<li>Composition: hydrogen, helium, methane, water, silicate</li>
+<li>Mass: ~370 Earth masses (~2.21 × 10²⁷ tons)</li>
+<li>Diameter: ~142,000 km (about 11 times Earth's diameter)</li>
+<li>Orbital Period: 2.22 days</li>
+<li>HD 189733 b is located extremely close to its star, which leads to scorching temperatures and violent atmospheric conditions.</li>
+<li>It is known for its deep blue color, likely caused by silicate particles that condense in its atmosphere, causing high-speed winds and storms.</li>
+`,
+	extra: `<li>Semi-Major Axis: ~0.0234 AU</li>
+<li>Eccentricity: ~0.049 (slightly eccentric orbit)</li>
+<li>Distance from Star: ~3.5 million km</li>
+<li>Spectral Type: G0</li>
+<li>Star Age: Approximately 3 billion years</li>
+<li>Luminosity: ~1.4% that of the Sun</li>
+`,
 	title: "HD_189733_b"
 }, {
 	name: "Kepler_186_f.glb",
 	x: -10,
 	y: -10,
 	z: -10,
-	info: "This is a big exoplanet. This is used for testing for now. Lorem Ipsum.",
+	info: `<li>Discovery Date: April 17, 2014</li>
+<li>Distance from Earth: ~580 light-years</li>
+<li>Type: Terrestrial</li>
+<li>Radius: 1.11 times that of Earth</li>
+<li>Composition: Silicates, metals (composition similar to Earth)</li>
+<li>Mass: 1.32 Earth masses (~7.88 × 10²⁴ tons)</li>
+<li>Diameter: ~12% larger than Earth (~14,300 km)</li>
+<li>Orbital Period: 129.9 days</li>
+<li>While little is known about its atmosphere, its location in the habitable zone makes it a candidate for potentially supporting life.</li>
+`,
+	extra: `
+	<li>Semi-Major Axis: ~0.356 AU</li>
+	<li>Eccentricity: Uknown</li>
+	<li>Distance from Star: ~53.6 million km</li>
+	<li>Spectral Type: M1 (Red Dwarf)</li>
+	<li>Star Age: Approximately 4 billion years</li>
+	<li>Luminosity: About 4% of the Sun’s luminosity</li>
+	`,
 	title: "Kepler_186_f"
 }, {
 	name: "Kepler_452_b.glb",
@@ -103,16 +137,33 @@ The<li> data leading to the discovery of Kepler-452b was collected through the K
 		<li>Spectral Type: G2</li>
 		<li>Star Age: Approximately 6 billion years</li>
 		<li>Luminosity: 20% brighter than the Sun</li>
-`
+`,
 	title: "Kepler_452_b"
 }, {
 	name: "Wasp_12_b.glb",
 	x: 15,
 	y: 0,
 	z: -15,
-	info: "This is a big exoplanet. This is used for testing for now. Lorem Ipsum.",
+	info: `<li>Discovery Date: April 1, 2008</li>
+<li>Distance from Earth: ~1,410 light-years</li>
+<li>Type: Gas Giant</li>
+<li>Radius: ~21.4 times that of Earth's</li>
+<li>Composition:  hydrogen, helium, carbon, carbon monoxide, methane</li>
+<li>Mass: ~448 Earth masses (~2.68 × 10²⁷ tons)</li>
+<li>Diameter: ~227,000 km (about 18 times Earth's diameter)</li>
+<li>Orbital Period: 1.09 days</li>
+<li>WASP-12b is one of the most extreme exoplanets that we know of, orbiting extremely close to its host star, which causes it to experience immense tidal forces. These forces are so strong that the planet is being deformed and is losing material to its star, giving it an elongated, football-like shape.</li>
+<li>It is also one of the darkest exoplanets discovered, reflecting very little light from its star.</li>
+`,
+	extra: `<li>Semi-Major Axis: ~0.0234 AU</li>
+<li>Eccentricity: ~0.049 (slightly eccentric orbit)</li>
+<li>Distance from Star: ~3.5 million km</li>
+<li>Spectral Type: G0</li>
+<li>Star Age: Approximately 3 billion years</li>
+<li>Luminosity: ~1.4% that of the Sun</li>
+`,
 	title: "Wasp_12_b"
-} */];
+}];
 const loader = new GLTFLoader();
 let objects = [];
 let sizes = {};
@@ -144,6 +195,8 @@ let raycaster = new THREE.Raycaster();
 			objects[objects.length-1].position.set(model.x, model.y, model.z);
 			objects[objects.length-1].updateMatrixWorld();
 
+			if (model.title == "Wasp_12_b") objects[objects.length-1].children[0].name = "Wasp_12_b";
+
 			scene.add(objects[objects.length-1]);
 
 			
@@ -151,7 +204,7 @@ let raycaster = new THREE.Raycaster();
 			let s = box.getSize(new THREE.Vector3());
 			sizes[objects[objects.length-1].children[0].name] = (s.x+s.y+s.z)/3;
 		}, function(xhr) {
-			console.log((xhr.loaded/xhr.total*100)+"% loaded of "+model);
+			//console.log((xhr.loaded/xhr.total*100)+"% loaded of "+model);
 		}, function(error) {
 			console.error("There was an error loading "+model+":", error);
 		});
@@ -251,7 +304,7 @@ function goTo(p, name) {
 		let pos = new THREE.Vector3();
 		pos.add(p.children[0].position);
 		pos.add(p.position);
-		
+		$("#selector").val(name);
 		gsap.to(camera.position, {
 			duration: 1,
 			x: pos.x,
