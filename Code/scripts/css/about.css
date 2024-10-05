@@ -239,6 +239,20 @@ footer p {
     
 }
 
+#contact {
+  font-family: "Afacad Flux", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+  text-align: justify;
+  text-justify: inter-word;
+  margin: 200px;
+  margin-top: 0;
+  margin-bottom: 0;
+    
+}
+
 
 .title {
   font-family: "Afacad Flux", sans-serif;
@@ -261,4 +275,28 @@ font-variation-settings:
   text-align: justify;
   text-justify: inter-word;
   
+}
+
+.startBtn {
+  background-color: white;
+  border-radius: 2px;
+  border: 0px;
+  transform: translate(0,20px);
+  height: 45px;
+  width: 150px;
+
+  font-family: "Afacad Flux", sans-serif;
+font-weight: 500;
+font-style: normal;
+font-variation-settings:
+  "slnt" 0;
+  font-size: 20px;
+  
+
+}
+
+
+.startHereBtn {
+  text-decoration: none;
+  color: black;
 }
