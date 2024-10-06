@@ -8,6 +8,7 @@
     <!-- Link to the external CSS file -->
     <link rel="stylesheet" href="../css/about.css" type="text/css">
     <link rel="stylesheet" href="../css/chat.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -19,9 +20,14 @@
         <!-- Main website title -->
         <div class="topnav">
             <img src="../assets/Logo.png" id="logo">
-            <a href="home">Home</a>
-            <a class="active" href="about.html">About Us</a>
-            
+            <a class="active" href="/home">Home</a>
+            <a href="">About</a>
+            <div></div>
+            <% if (loggedIn) { %>
+                <a class="logInOut" href="/logout">Log Out</a>
+            <% } else { %>
+                <a class="logInOut" href="/login">Log In</a>
+            <% } %>            
         </div>
 
         <!-- Navigation menu -->
