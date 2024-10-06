@@ -21,18 +21,13 @@
             <img src="../assets/Logo.png" id="logo">
             <a class="active" href="">Home</a>
             <a href="/about">About</a>
-            <a href="extraResources.ejs">Extra Resources</a>
-
+            <a href="/extraResources">Extra Resources</a>
             <div></div>
-
-           
-                <% if (loggedIn) { %>
-                    <a class="logInOut" href="/logout">Log Out</a>
-                <% } else { %>
-                    <a class="logInOut" href="/login">Log In</a>
-                <% } %>
-  
-            
+            <% if (loggedIn) { %>
+                <a class="logInOut" href="/logout">Log Out</a>
+            <% } else { %>
+                <a class="logInOut" href="/login">Log In</a>
+            <% } %>        
         </div>
 
         <!-- Navigation menu -->
