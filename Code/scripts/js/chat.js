@@ -10,7 +10,3 @@ document.getElementById("chat-button").addEventListener("click", function() {
 
 var chatContainer = document.getElementById("chat-container");
 var chatPrev = document.getElementById("chat-prev");
-
-chatContainer.addEventListener("submit", function(event) {
-    
-});
