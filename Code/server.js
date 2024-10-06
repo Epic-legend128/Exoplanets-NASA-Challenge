@@ -9,7 +9,6 @@ const User = mongoose.model("User");
 
 const app = express();
 const PORT = 3000;
-const allowed = ["interactive", "home", "notFound", "quiz", "about", "login"];
 const allowed = ["interactive", "home", "notFound", "quiz", "about", "login", "extraResources"];
 const previousChats = {};
 
