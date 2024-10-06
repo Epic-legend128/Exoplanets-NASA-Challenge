@@ -191,7 +191,7 @@ footer p {
 /* The hero image */
 .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/Planet hero image.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/YES PIC PLANET.webp");
 
   /* Set a specific height */
   height: 70%;
@@ -209,7 +209,7 @@ footer p {
   text-justify: inter-word;
   position: absolute;
   top: 50%;
-  left: 0%;
+  left: 25%;
   transform: translate(20%,-40%);
   color: white;
 }
@@ -221,6 +221,8 @@ footer p {
   font-variation-settings:
     "slnt" 0;
     font-size: 80px;
+
+
     
 }
 
