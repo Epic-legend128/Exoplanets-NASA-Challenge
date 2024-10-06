@@ -202,6 +202,7 @@ app.get("/home", async (req, res) => {
 });
 
 app.get("/logout", async (req, res) => {
+    previousChats[req.session.name] = [];
     req.session.name = "";
     req.session.password = "";
     res.redirect("home");
