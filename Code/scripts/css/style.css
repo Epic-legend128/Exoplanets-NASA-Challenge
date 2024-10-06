@@ -52,8 +52,12 @@ nav ul li {
 
 /* Styling the links inside the navigation */
 nav ul li a {
-    color: #fff; /* White link color */
-    text-decoration: none; /* Remove underline */
+  color: #fff; /* White link color */
+  text-decoration: none; /* Remove underline */
+}
+
+#ignore {
+  text-decoration: none; /* Remove underline */
 }
 
 /* Hover effect for navigation links */
@@ -130,6 +134,13 @@ footer p {
   font-variation-settings:
     "slnt" 0;
     font-size: 20px;
+  }
+
+  #ignore:hover {
+    background-color: black;
+    color: none;
+    border-radius: 0;
+    opacity: 100%;
   }
   
   
