@@ -8,7 +8,7 @@ body, html {
     overflow-x: hidden;
 }
 
-h1 {
+header {
     position: fixed;
     color: white;
     z-index: 1;
@@ -39,5 +39,25 @@ h1 {
     background-color: white;
     transform: scale(1.2);
     left: 2vw;
-    top: calc(10vh + 10px);
+    top: calc(12vh + 10px);
+}
+
+button {
+    background-color: white;
+    border-radius: 2px;
+    border: 0px;
+    height: 45px;
+    width: 150px;
+
+    transform: scale(0.8);
+    font-family: "Afacad Flux", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    font-size: 20px;
+}
+
+button {
+    text-decoration: none;
+    color: black;
 }
