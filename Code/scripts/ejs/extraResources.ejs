@@ -22,17 +22,12 @@
             <a href="#home">Home</a>
             <a href="/about">About</a>
             <a class="active" href="/extraResources">Extra Resources</a>
-
             <div></div>
-
-           
-                <% if (loggedIn) { %>
-                    <a class="logInOut" href="/logout">Log Out</a>
-                <% } else { %>
-                    <a class="logInOut" href="/login">Log In</a>
-                <% } %>
-  
-            
+            <% if (loggedIn) { %>
+                <a class="logInOut" href="/logout">Log Out</a>
+            <% } else { %>
+                <a class="logInOut" href="/login">Log In</a>
+            <% } %>
         </div>
 
         <!-- Navigation menu -->
@@ -42,42 +37,35 @@
                 <li><a href="about.html">Exoplanets</a></li>
                 <li><a href="#services">Interactive</a></li>
                 <li><a href="#contact">Chatbot</a></li>
-                
-                
             </ul>
         </nav>
     </header>
 
     <div class="hero-image">
         <div class="hero-text">
-          <h1 class="heroTitle">Extra Resources</h1>
-          
-
+            <h1 class="heroTitle">Extra Resources</h1>
         </div>
-      </div>
+    </div>
 
     <!-- Main Content Section -->
     <main>
-
         <!-- Home Section -->
         <section id="home">
             <h2 class="title">External Resources(Secondary)</h2>
-            <p class="text"> 
-                Looking to dive deeper into the topic or expand your understanding? Our curated list of extra resources provides a range of helpful tools, articles, and references to enhance your learning experience. Whether you're after more in-depth information, practical tips, or alternative perspectives, you'll find valuable content here to explore at your own pace. Click the links below to access these additional resources and take your knowledge to the next level!
-                </p>
+            <p class="text">Looking to dive deeper into the topic or expand your understanding? Our curated list of extra resources provides a range of helpful tools, articles, and references to enhance your learning experience. Whether you're after more in-depth information, practical tips, or alternative perspectives, you'll find valuable content here to explore at your own pace. Click the links below to access these additional resources and take your knowledge to the next level!</p>
         </section>
 
         <!-- About Section -->
         <section id="about">
             <h2 class="title">Links</h2>
-            <a href="https://www.jpl.nasa.gov/edu/teach/activity/exploring-exoplanets-with-kepler/">Link 1: Nasa website talking about kepler exoplanets</a><br>
-            <a href="https://nastro.ufpa.br/jogos">Link 2: Learn Exoplanents with Nastro</a><br>
-            <a href="https://exoplanetarchive.ipac.caltech.edu/">Link 3: Nasa's exoplanets archive</a><br>
-            <a href="https://psa.esa.int/psa/#/pages/home">Link 4: Planetary Science Archive</a><br>
-            <a href="https://www.asc-csa.gc.ca/eng/astronomy/beyond-our-solar-system/exoplanet-zoo.asp">Link 5: Documents provided by the government of Canada</a>
+            <ul>
+                <a target="_blank" href="https://www.jpl.nasa.gov/edu/teach/activity/exploring-exoplanets-with-kepler/">Nasa website talking about kepler exoplanets</a>
+                <a target="_blank" href="https://nastro.ufpa.br/jogos">Learn Exoplanents with Nastro</a>
+                <a target="_blank" href="https://exoplanetarchive.ipac.caltech.edu/">Nasa's exoplanets archive</a>
+                <a target="_blank" href="https://psa.esa.int/psa/#/pages/home">Planetary Science Archive</a>
+                <a target="_blank" href="https://www.asc-csa.gc.ca/eng/astronomy/beyond-our-solar-system/exoplanet-zoo.asp">Documents provided by the government of Canada</a>
+            </ul>
         </section>
-
-       
 
         <!-- Contact Section -->
         <section id="contact">
@@ -85,7 +73,6 @@
             <p>Email: helloworld@example.com</p>
             <!-- Added a button to send a message -->
             <button onclick="location.href='mailto:helloworld@example.com'">Send Message</button>
-
         </section>
 
     </main>
