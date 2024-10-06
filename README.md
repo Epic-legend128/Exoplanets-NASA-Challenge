@@ -39,11 +39,11 @@ Our product is an interactive web-based tool that allows users to explore exopla
   git clone https://github.com/your-repo-name/h-exo-plorers.git
 ```
 2. Install dependencies
-   ```bash
-   npm install
-   ```
+```bash
+  npm install
+```
 3. Start the application
 ```bash
-npm start
+  npm start
 ```
 4. Navigate to http://localhost:3000 in your browser to access the website.
