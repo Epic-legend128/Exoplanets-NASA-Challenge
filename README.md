@@ -1,9 +1,9 @@
 # H-Exo-Plorers - Chronicles of Exoplanets Exploration
 
 ## Overview
-Welcome to the official repository for **H-Exo-Plorers**! This project was developed as part of the NASA Hackathon at H Farm, where we chose the challenge **"Chronicles of Exoplanets Exploration"**.
+Welcome to the official repository for **H-Exo-Plorers**! This project was developed as part of the [NASA Hackathon 2024](https://www.spaceappschallenge.org/nasa-space-apps-2024/challenges/) at H Farm, where we chose the challenge [**"Chronicles of Exoplanets Exploration"**](https://www.spaceappschallenge.org/nasa-space-apps-2024/challenges/chronicles-of-exoplanet-exploration/).
 
-Our product is an interactive web-based tool that allows users to explore exoplanets in a 3D environment. The key features of the website include a home page with general information, an "About Us" page with team details and contact information, and most importantly, a fully navigable **3D map of exoplanets**. Users can click on any exoplanet to view detailed information and search for specific planets using a dropdown menu. Additionally, the website has a login/logout system that provides access to a Gemini-powered chatbot capable of answering questions about the exoplanets.
+Our product is an interactive web-based tool that allows users to explore exoplanets in a 3D environment. The key features of the website include a home page with general information, an "About Us" page with team details and contact information, and most importantly, a fully navigable **3D map of exoplanets**. Users can click on any exoplanet to view detailed information and search for specific planets using a dropdown menu. Additionally, the website has a login/logout system that provides access to a Gemini-powered chatbot capable of answering questions about the exoplanets. You can find more about our team and submission [here](https://www.spaceappschallenge.org/nasa-space-apps-2024/find-a-team/h-exo-plorers/).
 
 ## Features
 - **Homepage**: General information about the project.
